@@ -7,16 +7,12 @@ const rl = readline.createInterface({
 let input = [];
 
 rl.on('line', function (line) {
-    input = line.split(' ');
+    input = line;
     
 }).on('close', function () {
-    let num = parseInt(input[0]);
+    let num = Number(input);
     
-    for(let i = 0; i < num; i++){
-        input[i] = '';
-        for(let j = 0; j <= i; j++){
-            input[i] += '*';
-        }
-        console.log(input[i]);
+    for(let i = 1; i <= num; i++){
+        console.log('*'.repeat(i));
     }
 });
